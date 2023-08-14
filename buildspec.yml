@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    REPOSITORY_URI: "public.ecr.aws/a4c9g4h8/basicmicroservice"  # replace this with your ECR URI
+    REPOSITORY_URI: "474665970233.dkr.ecr.us-east-2.amazonaws.com/basicmicroservice"  # replace this with your ECR URI
 
 phases:
   pre_build:
