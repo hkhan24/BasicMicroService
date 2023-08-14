@@ -11,9 +11,12 @@ RUN dotnet restore "BasicMicroservice/BasicMicroservice.csproj"
 
 WORKDIR "/src/BasicMicroservice"
 COPY . .
-RUN rm -rf /app/build/*
+# Ensure the output directory exists and is clean
+RUN mkdir -p /app/build/output && rm -rf /app/build/output/*
 RUN dotnet restore "BasicMicroservice.csproj"
 RUN dotnet build "BasicMicroservice.csproj" -c Release -o /app/build/output
+# List contents of the output directory to check if there are any surprises
+RUN ls -la /app/build/output
 
 FROM build AS publish
 RUN dotnet publish "BasicMicroservice.csproj" -c Release -o /app/publish
