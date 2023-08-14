@@ -6,7 +6,7 @@ EXPOSE 80
 # Use the SDK image to build the app
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["BasicMicroservice.csproj", "BasicMicroservice/"]
+COPY ["BasicMicroservice/BasicMicroservice.csproj", "BasicMicroservice/"]
 RUN dotnet restore "BasicMicroservice/BasicMicroservice.csproj"
 
 WORKDIR "/src/BasicMicroservice"
