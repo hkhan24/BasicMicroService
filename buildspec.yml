@@ -5,6 +5,9 @@ env:
     REPOSITORY_URI: "https://github.com/hkhan24/BasicMicroService.git"  # replace this with your ECR URI
 
 phases:
+  install:
+    runtime-versions:
+      docker: 18
   pre_build:
     commands:
       - echo "Building Docker image..."
