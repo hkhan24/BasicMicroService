@@ -11,6 +11,8 @@ RUN dotnet restore "BasicMicroservice/BasicMicroservice.csproj"
 
 WORKDIR "/src/BasicMicroservice"
 COPY . .
+RUN rm -rf /app/build/*
+RUN dotnet restore "BasicMicroservice.csproj"
 RUN dotnet build "BasicMicroservice.csproj" -c Release -o /app/build
 
 FROM build AS publish
