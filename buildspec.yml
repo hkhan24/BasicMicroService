@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    REPOSITORY_URI: "https://github.com/hkhan24/BasicMicroService.git"  # replace this with your ECR URI
+    REPOSITORY_URI: "public.ecr.aws/a4c9g4h8/basicmicroservice"  # replace this with your ECR URI
 
 phases:
   pre_build:
